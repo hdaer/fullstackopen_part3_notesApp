@@ -30,6 +30,7 @@ const App = () => {
         setNotes(notes.map((note) => (note.id === id ? response.data : note)));
       })
       .catch((error) => {
+        console.error("Error updating note:", error.message);
         setErrorMessage(
           `the note ${noteToToggle.content} was already deleted from the server`
         );
